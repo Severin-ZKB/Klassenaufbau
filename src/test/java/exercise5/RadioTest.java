@@ -7,47 +7,39 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
-
+    Radio radio;
     @BeforeEach
     void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
+        radio = new Radio(true, 10, 1.5);
     }
 
     @Test
     void on() {
-        boolean isON = true;
-        assertEquals(true, isON);
+        radio.on();
+        assertTrue(radio.isOn());
     }
 
     @Test
     void off() {
-        boolean isOFF = true;
-        assertEquals(true, isOFF);
+        radio.off();
+        assertTrue(radio.isOn());
     }
 
     @Test
     void increaseVolume() {
-        int increaseVolume = 10;
-        assertEquals(10, increaseVolume);
+        radio.increaseVolume();
+        assertEquals(11, radio.getVolume());
     }
 
     @Test
     void decreaseVolume() {
-        int decreaseVolume = 5;
-        assertEquals(5, decreaseVolume);
+        radio.decreaseVolume();
+        assertEquals(9 , radio.getVolume());
     }
 
     @Test
     void selectChannel() {
-        double selectChannel = 4.2;
-        assertEquals(4.2, selectChannel);
-    }
-
-    @Test
-    void testToString() {
-        String toString = "radio";
+        radio.getFrequenzy();
+        assertEquals(1.5, radio.getFrequenzy());
     }
 }

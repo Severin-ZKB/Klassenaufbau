@@ -1,14 +1,39 @@
 package exercise5;
 
 public class Radio {
-    public boolean isOn;
-    public int volume;
-    public double frequenzy;
-    public Radio() {
+    private boolean isOn;
+    private int volume;
+    private double frequenzy;
+    public Radio(boolean isOn, int volume, double frequenzy) {
         this.isOn = isOn;
         this.volume = volume;
         this.frequenzy = frequenzy;
     }
+
+    public boolean isOn() {
+        return isOn;
+    }
+
+    public void setOn(boolean on) {
+        isOn = on;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public double getFrequenzy() {
+        return frequenzy;
+    }
+
+    public void setFrequenzy(double frequenzy) {
+        this.frequenzy = frequenzy;
+    }
+
     public void on() {
         if (isOn == true) {
             System.out.println("Radio is on");
